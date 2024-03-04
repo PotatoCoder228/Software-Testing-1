@@ -1,6 +1,7 @@
 package ru.itmo.potatocoder228.tpo.task3;
 
-public class Schema {
+public class Schema implements Nameable{
+    private final String name = "Schema";
     public String manipulate(){
         String action = "Schema Manipulate";
         System.out.println(action);
@@ -33,14 +34,14 @@ public class Schema {
         return action;
     }
 
-    public String analyze(){
-        String action = "Schema Analyze";
+    public String analyze(Nameable object){
+        String action = "Schema Analyze "+object.getName();
         System.out.println(action);
         return action;
     }
 
-    public String check(){
-        String action = "Schema Check";
+    public String measure(Nameable object){
+        String action = "Schema Measure "+object.getName();
         System.out.println(action);
         return action;
     }
@@ -49,5 +50,9 @@ public class Schema {
         String action = "Schema Shutdown";
         System.out.println(action);
         return action;
+    }
+
+    public String getName(){
+        return this.name;
     }
 }

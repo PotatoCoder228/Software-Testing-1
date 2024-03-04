@@ -1,6 +1,6 @@
 package ru.itmo.potatocoder228.tpo.task3;
 
-public class Person {
+public class Person implements Nameable{
     private String name = "Marvin";
     private Schema schema = new Schema();;
     public Person(String name){
@@ -8,8 +8,8 @@ public class Person {
     }
     public Person(){}
 
-    public String watch(){
-        String action = name+" Watch";
+    public String watch(Nameable object){
+        String action = name+" Watch "+object.getName();
         System.out.println(action);
         return action;
     }

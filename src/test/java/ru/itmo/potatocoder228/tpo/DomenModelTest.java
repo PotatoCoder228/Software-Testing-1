@@ -22,20 +22,22 @@ public class DomenModelTest {
     @Test
     public void TestPerson() {
         Person person = new Person();
-        assertTrue("Marvin Watch".equals(person.watch()));
+        Nameable object = new Door();
+        assertTrue("Marvin Watch Door".equals(person.watch(object)));
     }
 
     @Test
     public void TestSchema() {
         Person person = new Person();
         Schema schema = person.getSchema();
+        Nameable object = new Door();
         assertTrue("Schema Manipulate".equals(schema.manipulate()));
         assertTrue("Schema Chirping".equals(schema.chirping()));
         assertTrue("Schema Snap".equals(schema.snap()));
         assertTrue("Schema Say".equals(schema.say()));
         assertTrue("Schema Fun".equals(schema.fun()));
-        assertTrue("Schema Analyze".equals(schema.analyze()));
-        assertTrue("Schema Check".equals(schema.check()));
+        assertTrue("Schema Analyze Door".equals(schema.analyze(object)));
+        assertTrue("Schema Measure Door".equals(schema.measure(object)));
         assertTrue("Schema Shutdown".equals(schema.shutdown()));
     }
 }
